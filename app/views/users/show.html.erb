@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+<% @posts.each do |post|  %>
+<%= post.content  %><br>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
