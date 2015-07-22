@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.paginate(:page => params[:page], :per_page => 30)
+		@posts = Post.includes(:likes).paginate(:page => params[:page], :per_page => 30)
+		@comment = Comment.new
 	end
 
 	def create

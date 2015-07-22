@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = current_user
     @posts = Post.paginate(:page => params[:page], :per_page => 30)
     @post = Post.new
+    @comment = Comment.new
   end
 
   # GET /users/new
